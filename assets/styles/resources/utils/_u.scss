@@ -1,4 +1,4 @@
-@use "utils";
+@use "map";
 
 @function u($size) {
   $sizes: (
@@ -17,5 +17,5 @@
     "7": 7rem,
   );
 
-  @return utils.checkAndGet($sizes, #{$size});
+  @return map.checkAndGet($sizes, #{$size});
 }

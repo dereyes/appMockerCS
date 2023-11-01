@@ -1,0 +1,11 @@
+@use "sass:map";
+
+@function checkAndGet($map, $index) {
+  $result: map.get($map, $index);
+
+  @if ($result) {
+    @return $result;
+  } @else {
+    @error "#{$index} not found in #{$map}";
+  }
+}

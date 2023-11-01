@@ -1,17 +1,19 @@
 <template>
   <div class="screen">
     <div class="screen-superview">
-      <ScreenDeadZone v-if="!specialHeader" />
-      <ScreenSpecialHeaderHero
-        background=""
-        :heading="specialHeaderHeading"
-        :subheading="specialHeaderSubheading"
-      />
       <div class="screen-scrollArea">
+        <ScreenDeadZone v-if="!specialHeader" />
+        <ScreenSpecialHeaderHero
+          v-if="specialHeader"
+          background=""
+          :heading="specialHeaderHeading"
+          :subheading="specialHeaderSubheading"
+        />
         <div class="screen-safeArea">
           <slot></slot>
         </div>
       </div>
+      <slot name="bottomNav"></slot>
       <ScreenDeadZone />
     </div>
   </div>

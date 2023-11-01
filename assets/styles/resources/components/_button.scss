@@ -1,0 +1,5 @@
+@use "sass:math";
+@use "../utils/u" as *;
+
+$button-minHeight: u(3.5);
+$button-border-radius: math.div($button-minHeight, 2);
