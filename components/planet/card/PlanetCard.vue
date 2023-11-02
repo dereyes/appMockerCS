@@ -2,6 +2,8 @@
   <div class="card">
     <div class="card-heading">
       <PlanetButtonIcon :iconName="buttonIconName" />
+      <h1>{{ heading }}</h1>
+      <p>{{ subheading }}</p>
     </div>
   </div>
 </template>
@@ -11,8 +13,8 @@ import PlanetButtonIcon from "../button/PlanetButtonIcon.vue";
 
 const props = defineProps({
   buttonIconName: String,
-  header: String,
-  subheader: String,
+  heading: String,
+  subheading: String,
 });
 </script>
 

@@ -39,7 +39,7 @@ const props = defineProps({
 
 .screen {
   display: flex;
-  filter: drop-shadow(0 u(1) u(0.5) rgba(0, 0, 0, 0.5));
+  // filter: drop-shadow(0 u(1) u(0.5) rgba(0, 0, 0, 0.5)); // TODO: Address lag in Chrome
   flex-flow: row nowrap;
   height: math.div(2556px, 3); // iPhone 14 height
   margin: u(2);
