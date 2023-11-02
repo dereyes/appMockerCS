@@ -1,0 +1,10 @@
+[
+  {
+    "heroImageURL": "https://images.unsplash.com/photo-1670960058964-79063a8ecc91?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80",
+    "id": "monterey",
+    "name": "Monterey Trip 2023",
+    "notificationCount": 5,
+    "userIdAdmin": "eDriver",
+    "userIdsMembers": ["eDriver", "aDavidson", "", "", "", "", ""]
+  }
+]
