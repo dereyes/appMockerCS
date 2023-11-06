@@ -20,8 +20,11 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .card {
+  border: $card-borderWeight solid role("border");
   display: flex;
   flex-flow: column nowrap;
+  margin: $card-margin;
+  padding: $card-padding;
 
   &-heading {
     display: flex;

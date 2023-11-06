@@ -17,7 +17,8 @@ const icon = (iconName) => {
   switch (iconName) {
     case "ellipsis":
       return "...";
-      break;
+    case "plus":
+      return "+";
   }
 
   throw "invalid iconName";

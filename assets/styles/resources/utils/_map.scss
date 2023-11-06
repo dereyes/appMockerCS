@@ -6,6 +6,8 @@
   @if ($result) {
     @return $result;
   } @else {
+    @debug $index;
+    @debug $map;
     @error "#{$index} not found in #{$map}";
   }
 }

@@ -12,14 +12,7 @@ export const useGroupStore = defineStore("groupStore", {
     for (let group of groups) {
       group.memberCount = group.userIdsMembers.length;
 
-      //   group.userNameAdmin = () => {
-      //     const userAdmin = userStore.getUserById(group.userIdAdmin);
-      //     return `${userAdmin.nameFirst} ${userAdmin.nameLast}`;
-      //   };
-
-      // console.log(userStore.getUserById(group.userIdAdmin));
-
-        group.userNameAdmin = `
+      group.userNameAdmin = `
           ${userStore.getUserById(group.userIdAdmin).nameFirst}
           ${userStore.getUserById(group.userIdAdmin).nameLast}
       `;

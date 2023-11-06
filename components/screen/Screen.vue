@@ -6,6 +6,7 @@
         <ScreenSpecialHeaderHero
           v-if="specialHeader"
           background=""
+          :buttonIconName="specialHeaderIconButtonName"
           :heading="specialHeaderHeading"
           :subheading="specialHeaderSubheading"
         />
@@ -27,6 +28,7 @@ const props = defineProps({
   },
   specialHeader: String,
   specialHeaderBackground: String,
+  specialHeaderIconButtonName: String,
   specialHeaderHeading: String,
   specialHeaderSubheading: String,
 });

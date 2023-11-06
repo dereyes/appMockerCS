@@ -1,0 +1,10 @@
+@use "sass:math";
+@use "sizes" as *;
+
+@function stripUnit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+@function convertRemToPx($rem) {
+  @return stripUnit($rem) * $remInPx;
+}

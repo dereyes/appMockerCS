@@ -1,8 +1,9 @@
 <template>
   <Screen
     specialHeader="hero"
-    specialHeaderHeading="Group name"
-    specialHeaderSubheading="Organized by"
+    specialHeaderIconButtonName="plus"
+    :specialHeaderHeading="groupMonterey.name"
+    :specialHeaderSubheading="`Organized by ${groupMonterey.userNameAdmin} • ${groupMonterey.memberCount} members`"
   >
     <PlanetCard
       buttonIconName="ellipsis"

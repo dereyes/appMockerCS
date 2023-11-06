@@ -1,7 +1,9 @@
 <template>
   <div class="screen-specialHeader-hero">
     <ScreenDeadZone />
-    <div class="screen-specialHeader-hero-gradient-top">button</div>
+    <div class="screen-specialHeader-hero-gradient-top">
+      <PlanetButtonIcon :iconName="buttonIconName" />
+    </div>
     <div class="screen-specialHeader-hero-gradient-bottom">
       <h1>
         {{ heading }}
@@ -16,6 +18,7 @@
 <script setup>
 const props = defineProps({
   background: String,
+  buttonIconName: String,
   heading: String,
   subheading: String,
 });
@@ -31,6 +34,7 @@ $gradient-top-height: u(6);
 .screen-specialHeader-hero {
   display: flex;
   flex-flow: column nowrap;
+  padding: $card-padding; //$card-spacingTotal
 
   &-gradient {
     &-top {

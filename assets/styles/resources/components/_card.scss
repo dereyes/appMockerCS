@@ -1,0 +1,8 @@
+@use "../utils/sizes" as *;
+@use "../utils/convert" as *;
+
+$card-borderWeight: 1px;
+$card-margin: u(1);
+$card-padding: u(1);
+$card-spacingTotal: $card-borderWeight + convertRemToPx($card-margin) +
+  convertRemToPx($card-padding);
