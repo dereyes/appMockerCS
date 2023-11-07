@@ -35,10 +35,6 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-* {
-  border: 1px solid red;
-}
-
 .screen {
   display: flex;
   // filter: drop-shadow(0 u(1) u(0.5) rgba(0, 0, 0, 0.5)); // TODO: Address lag in Chrome
@@ -49,7 +45,7 @@ const props = defineProps({
   width: math.div(1179px, 3); // iPhone 14 width
 
   &-superview {
-    background: blue;
+    background: color-role("surface-light");
     clip-path: inset(0% 0% 0% 0% round $screenBorderRadius);
     display: flex;
     flex-flow: column nowrap;

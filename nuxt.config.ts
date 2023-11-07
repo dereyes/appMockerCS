@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           additionalData:
-            '@use "sass:math"; @use "sass:map"; @use "sass:list"; @use "@/assets/styles/resources" as *;',
+            '@use "sass:color"; @use "sass:list"; @use "sass:map"; @use "sass:math"; @use "@/assets/styles/resources" as *;',
         },
       },
     },

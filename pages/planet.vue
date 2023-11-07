@@ -1,15 +1,49 @@
 <template>
   <Screen
     specialHeader="hero"
-    specialHeaderIconButtonName="plus"
+    specialHeaderIconButtonName="ellipsis"
     :specialHeaderHeading="groupMonterey.name"
     :specialHeaderSubheading="`Organized by ${groupMonterey.userNameAdmin} • ${groupMonterey.memberCount} members`"
   >
-    <PlanetCard
-      buttonIconName="ellipsis"
-      :heading="groupMonterey.name"
-      :subheading="`Organized by ${groupMonterey.userNameAdmin} • ${groupMonterey.memberCount} members`"
-    />
+    <PlanetCard buttonIconName="plus">
+      <template v-slot:heading>
+        <PlanetTypographyHeadingHighlight
+          highlight="5"
+          lowlight="New Messages"
+          tag="h2"
+        />
+      </template>
+    </PlanetCard>
+
+    <PlanetCard buttonIconName="plus">
+      <template v-slot:heading>
+        <PlanetTypographyHeadingHighlight
+          highlight="4"
+          lowlight="Upcoming Events"
+          tag="h2"
+        />
+      </template>
+    </PlanetCard>
+
+    <PlanetCard buttonIconName="plus">
+      <template v-slot:heading>
+        <PlanetTypographyHeadingHighlight
+          highlight="5"
+          lowlight="Assigned Tasks"
+          tag="h2"
+        />
+      </template>
+    </PlanetCard>
+
+    <PlanetCard buttonIconName="plus">
+      <template v-slot:heading>
+        <PlanetTypographyHeadingHighlight
+          highlight="2"
+          lowlight="Unanswered Polls"
+          tag="h2"
+        />
+      </template>
+    </PlanetCard>
     <div>
       What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and
       typesetting industry. Lorem Ipsum has been the industry's standard dummy

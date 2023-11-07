@@ -1,21 +1,23 @@
 @use "map";
 
-@function palette($key) {
+@function color-palette($key) {
   $palette: (
-    "black": #000,
-    "white": #fff,
+    "black": #000000,
+    "white": #ffffff,
     "linen": "#F0EBE6",
   );
 
   @return map.checkAndGet($palette, #{$key});
 }
 
-@function role($key) {
+@function color-role($key) {
   $role: (
-    "border": #{palette("black")},
-    "surface": #{palette("linen")},
-    "text-dark": #{palette("black")},
-    "text-light": #{palette("white")},
+    "border-dark": color-palette("black"),
+    "border-light": color-palette("white"),
+    "surface-dark": color-palette("black"),
+    "surface-light": color-palette("linen"),
+    "text-dark": color-palette("black"),
+    "text-light": color-palette("white"),
   );
 
   @return map.checkAndGet($role, #{$key});

@@ -1,14 +1,15 @@
 <template>
   <div class="screen-specialHeader-hero">
     <ScreenDeadZone />
-    <div class="screen-specialHeader-hero-gradient-top">
-      <PlanetButtonIcon :iconName="buttonIconName" />
-    </div>
+    <div class="screen-specialHeader-hero-gradient-top"></div>
     <div class="screen-specialHeader-hero-gradient-bottom">
-      <h1>
+      <div class="screen-specialHeader-hero-gradient-bottom-button">
+        <PlanetButtonIcon :iconName="buttonIconName" theme="light" />
+      </div>
+      <h1 class="screen-specialHeader-hero-heading">
         {{ heading }}
       </h1>
-      <p>
+      <p class="screen-specialHeader-hero-subheading">
         {{ subheading }}
       </p>
     </div>
@@ -25,28 +26,37 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-* {
-  border: 1px solid green;
-}
-
+$gradient-color: color.adjust(color-role("surface-dark"), $alpha: 0.8);
 $gradient-top-height: u(6);
 
 .screen-specialHeader-hero {
   display: flex;
   flex-flow: column nowrap;
-  padding: $card-padding; //$card-spacingTotal
+  padding: 0 0 $card-padding; //$card-spacingTotal
 
   &-gradient {
     &-top {
-      display: flex;
-      flex: 0 0 $gradient-top-height;
-      flex-flow: column nowrap;
+      flex: $gradient-top-height 0 0;
+      background: linear-gradient(transparent, $gradient-color);
     }
 
     &-bottom {
+      background: $gradient-color;
       display: flex;
       flex-flow: column nowrap;
+      padding: 0 $card-padding;
+
+      &-button {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: end;
+      }
     }
+  }
+
+  &-heading,
+  &-subheading {
+    color: color-role("text-light");
   }
 }
 </style>
