@@ -23,6 +23,7 @@
           tag="h2"
         />
       </template>
+      <PlanetListImageText :list="groupMontereyEventList" />
     </PlanetCard>
 
     <PlanetCard buttonIconName="plus">
@@ -89,5 +90,11 @@ const groupStore = useGroupStore();
 
 const groupMonterey = groupStore.getGroupById("monterey");
 
-console.log(groupMonterey);
+const groupMontereyEventList = [
+  {
+    description: "test",
+    imageURL: "test",
+    title: "test",
+  },
+];
 </script>

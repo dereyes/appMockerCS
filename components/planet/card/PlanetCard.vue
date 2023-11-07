@@ -8,6 +8,7 @@
       <slot name="heading"></slot>
       <p v-if="subheading">{{ subheading }}</p>
     </div>
+    <slot name="default"></slot>
   </div>
 </template>
 
