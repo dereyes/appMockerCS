@@ -23,6 +23,8 @@ const icon = (iconName) => {
       return "...";
     case "plus":
       return "+";
+    case "rightArrow":
+      return "→";
   }
 
   throw "invalid iconName";

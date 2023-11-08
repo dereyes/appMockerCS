@@ -2,10 +2,11 @@
   <Screen
     specialHeader="hero"
     specialHeaderIconButtonName="ellipsis"
+    :specialHeaderBackground="groupMonterey.heroImageURL"
     :specialHeaderHeading="groupMonterey.name"
     :specialHeaderSubheading="`Organized by ${groupMonterey.userNameAdmin} • ${groupMonterey.memberCount} members`"
   >
-    <PlanetCard buttonIconName="plus">
+    <PlanetCard>
       <template v-slot:heading>
         <PlanetTypographyHeadingHighlight
           highlight="5"
@@ -13,9 +14,13 @@
           tag="h2"
         />
       </template>
+      <template v-slot:footer-buttons>
+        <PlanetButtonIcon iconName="plus" />
+        <PlanetButtonIcon iconName="rightArrow" />
+      </template>
     </PlanetCard>
 
-    <PlanetCard buttonIconName="plus">
+    <PlanetCard>
       <template v-slot:heading>
         <PlanetTypographyHeadingHighlight
           highlight="4"
@@ -24,9 +29,13 @@
         />
       </template>
       <PlanetListImageText :list="groupMontereyEventList" />
+      <template v-slot:footer-buttons>
+        <PlanetButtonIcon iconName="plus" />
+        <PlanetButtonIcon iconName="rightArrow" />
+      </template>
     </PlanetCard>
 
-    <PlanetCard buttonIconName="plus">
+    <PlanetCard>
       <template v-slot:heading>
         <PlanetTypographyHeadingHighlight
           highlight="5"
@@ -34,15 +43,23 @@
           tag="h2"
         />
       </template>
+      <template v-slot:footer-buttons>
+        <PlanetButtonIcon iconName="plus" />
+        <PlanetButtonIcon iconName="rightArrow" />
+      </template>
     </PlanetCard>
 
-    <PlanetCard buttonIconName="plus">
+    <PlanetCard>
       <template v-slot:heading>
         <PlanetTypographyHeadingHighlight
           highlight="2"
           lowlight="Unanswered Polls"
           tag="h2"
         />
+      </template>
+      <template v-slot:footer-buttons>
+        <PlanetButtonIcon iconName="plus" />
+        <PlanetButtonIcon iconName="rightArrow" />
       </template>
     </PlanetCard>
     <div>
@@ -84,13 +101,15 @@
 </template>
 
 <script setup>
-import { useGroupStore } from "~/stores/planet/groupStore";
 import { useEventStore } from "~/stores/planet/eventStore";
+import { useGroupStore } from "~/stores/planet/groupStore";
+import { useTaskStore } from "~/stores/planet/taskStore";
 
 const group = "groupMonterey";
 
-const groupStore = useGroupStore();
 const eventStore = useEventStore();
+const groupStore = useGroupStore();
+const taskStore = useTaskStore();
 
 const groupMonterey = groupStore.getGroupById(group);
 
@@ -105,11 +124,12 @@ const groupMontereyEventList = eventStore
     };
   });
 
-// [
-//   {
-//     description: "test",
-//     imageURL: "test",
-//     title: "test",
-//   },
-// ];
+const groupMontereyTaskList = taskStore
+  .getTasksByGroupId(group, 3)
+  .map((task) => {
+    return {
+      completedState: task.completedState,
+      title: task?.title,
+    };
+  });
 </script>

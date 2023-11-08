@@ -5,7 +5,7 @@
         <ScreenDeadZone v-if="!specialHeader" />
         <ScreenSpecialHeaderHero
           v-if="specialHeader"
-          background=""
+          :background="specialHeaderBackground"
           :buttonIconName="specialHeaderIconButtonName"
           :heading="specialHeaderHeading"
           :subheading="specialHeaderSubheading"

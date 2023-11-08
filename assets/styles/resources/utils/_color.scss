@@ -4,7 +4,7 @@
   $palette: (
     "black": #000000,
     "white": #ffffff,
-    "linen": "#F0EBE6",
+    "linen": #f0ebe6,
   );
 
   @return map.checkAndGet($palette, #{$key});

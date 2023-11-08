@@ -1,0 +1,26 @@
+[
+  {
+    "completedState": "open",
+    "groupId": "groupMonterey",
+    "id": "task1",
+    "title": "Buy pizza for Saturday 🍕",
+    "type": "task"
+  },
+  {
+    "completedState": "open",
+    "groupId": "groupMonterey",
+    "id": "task2",
+    "title": "Pick up State Park pass",
+    "type": "task"
+  },
+  {
+    "completedState": "open",
+    "groupId": "groupMonterey",
+    "id": "task3",
+    "type": "poll",
+    "poll": {
+      "title": "What should we do for dinner on Sunday?",
+      "userIDCreator": "aDavidson"
+    }
+  }
+]

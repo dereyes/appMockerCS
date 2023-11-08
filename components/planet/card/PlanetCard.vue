@@ -1,14 +1,16 @@
 <template>
   <div class="card">
     <div class="card-heading">
-      <div class="card-heading-options">
-        <PlanetButtonIcon v-if="buttonIconName" :iconName="buttonIconName" />
-      </div>
       <h2 v-if="heading">{{ heading }}</h2>
       <slot name="heading"></slot>
       <p v-if="subheading">{{ subheading }}</p>
     </div>
     <slot name="default"></slot>
+    <div class="card-footer">
+      <div class="card-footer-buttons">
+        <slot name="footer-buttons"></slot>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -34,10 +36,16 @@ const props = defineProps({
   &-heading {
     display: flex;
     flex-flow: column nowrap;
+  }
 
-    &-options {
+  &-footer {
+    display: flex;
+    flex-flow: column nowrap;
+
+    &-buttons {
       display: flex;
       flex-flow: row nowrap;
+      gap: u(0.5);
       justify-content: end;
     }
   }

@@ -1,5 +1,10 @@
 <template>
-  <div class="screen-specialHeader-hero">
+  <div
+    class="screen-specialHeader-hero"
+    :style="{
+      backgroundImage: `url(${background})`,
+    }"
+  >
     <ScreenDeadZone />
     <div class="screen-specialHeader-hero-gradient-top"></div>
     <div class="screen-specialHeader-hero-gradient-bottom">
@@ -26,13 +31,14 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-$gradient-color: color.adjust(color-role("surface-dark"), $alpha: 0.8);
+$gradient-color: color.adjust(color-role("surface-dark"), $alpha: -0.33);
 $gradient-top-height: u(6);
 
 .screen-specialHeader-hero {
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-flow: column nowrap;
-  padding: 0 0 $card-padding; //$card-spacingTotal
 
   &-gradient {
     &-top {
@@ -44,7 +50,7 @@ $gradient-top-height: u(6);
       background: $gradient-color;
       display: flex;
       flex-flow: column nowrap;
-      padding: 0 $card-padding;
+      padding: 0 $card-padding $card-padding;
 
       &-button {
         display: flex;
