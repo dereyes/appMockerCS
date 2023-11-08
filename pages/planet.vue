@@ -85,16 +85,31 @@
 
 <script setup>
 import { useGroupStore } from "~/stores/planet/groupStore";
+import { useEventStore } from "~/stores/planet/eventStore";
+
+const group = "groupMonterey";
 
 const groupStore = useGroupStore();
+const eventStore = useEventStore();
 
-const groupMonterey = groupStore.getGroupById("monterey");
+const groupMonterey = groupStore.getGroupById(group);
 
-const groupMontereyEventList = [
-  {
-    description: "test",
-    imageURL: "test",
-    title: "test",
-  },
-];
+const groupMontereyEventList = eventStore
+  .getEventsByGroupId(group, 3)
+  .map((event) => {
+    return {
+      chip: event.rsvpState,
+      description: `${event.date} • ${event.time}`,
+      imageURL: "test",
+      title: event.name,
+    };
+  });
+
+// [
+//   {
+//     description: "test",
+//     imageURL: "test",
+//     title: "test",
+//   },
+// ];
 </script>

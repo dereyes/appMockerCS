@@ -1,11 +1,11 @@
 <template>
   <li class="list-imageText-item">
-    <div class="list-imageText-image"></div>
-    <div class="list-imageText-content">
-      <p class="list-imageText-title">
-        {{ title }}
+    <div class="list-imageText-item-image"></div>
+    <div class="list-imageText-item-content">
+      <p class="list-imageText-item-title">
+        <strong>{{ title }}</strong>
       </p>
-      <p class="list-imageText-description">{{ description }}</p>
+      <p class="list-imageText-item-description">{{ description }}</p>
       <slot></slot>
     </div>
   </li>
@@ -19,4 +19,20 @@ const props = defineProps({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.list-imageText {
+  &-item {
+    align-items: start;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: u(1);
+
+    &-image {
+      border: 1px solid color-role("border-dark");
+      border-radius: u(0.5);
+      aspect-ratio: 1 / 1;
+      flex: u(4) 0 0;
+    }
+  }
+}
+</style>

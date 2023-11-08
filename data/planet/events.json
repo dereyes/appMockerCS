@@ -1,0 +1,29 @@
+[
+	{
+		"date": "Sat, Jan 27",
+		"id": "eventDali",
+		"groupId": "groupMonterey",
+		"name": "Visit the Salvador Dali Museum",
+		"notificationCount": 5,
+		"rsvpState": "Attending",
+		"time": "10a"
+	},
+	{
+		"date": "Sat, Jan 27",
+		"id": "eventRamen",
+		"groupId": "groupMonterey",
+		"name": "Ramen Night",
+		"notificationCount": 5,
+		"rsvpState": "Not attending",
+		"time": "7p"
+	},
+	{
+		"date": "Sun, Jan 28",
+		"id": "eventLan",
+		"groupId": "groupMonterey",
+		"name": "LAN Party",
+		"notificationCount": 5,
+		"rsvpState": "Tentative",
+		"time": "10p"
+	}
+]
