@@ -1,5 +1,10 @@
 <template>
-  <div class="card">
+  <div :class="['card', `card-${theme}`]">
+    <div class="card-header">
+      <div class="card-header-buttons">
+        <slot name="header-buttons"></slot>
+      </div>
+    </div>
     <div class="card-heading">
       <h2 v-if="heading">{{ heading }}</h2>
       <slot name="heading"></slot>
@@ -21,6 +26,10 @@ const props = defineProps({
   buttonIconName: String,
   heading: String,
   subheading: String,
+  theme: {
+    type: String,
+    default: "dark",
+  },
 });
 </script>
 
@@ -33,11 +42,17 @@ const props = defineProps({
   margin: $card-margin;
   padding: $card-padding;
 
-  &-heading {
-    display: flex;
-    flex-flow: column nowrap;
+  &-dark {
+    border-color: color-role("border-dark");
+    color: color-role("border-dark");
   }
 
+  &-light {
+    border-color: color-role("border-light");
+    color: color-role("border-light");
+  }
+
+  &-header,
   &-footer {
     display: flex;
     flex-flow: column nowrap;
@@ -48,6 +63,11 @@ const props = defineProps({
       gap: u(0.5);
       justify-content: end;
     }
+  }
+
+  &-heading {
+    display: flex;
+    flex-flow: column nowrap;
   }
 }
 </style>

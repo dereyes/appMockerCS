@@ -1,5 +1,5 @@
 <template>
-  <button :class="`button-icon button-icon-${theme}`">
+  <button :class="['button-icon', `button-icon-${theme}`]">
     {{ icon(iconName) }}
   </button>
 </template>

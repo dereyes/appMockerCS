@@ -35,9 +35,13 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+$screenBezelWidth: u(0.75);
+
 .screen {
   display: flex;
-  // filter: drop-shadow(0 u(1) u(0.5) rgba(0, 0, 0, 0.5)); // TODO: Address lag in Chrome
+  filter: drop-shadow(
+    0 u(1) 0 u(0.5) rgba(0, 0, 0, 0.5)
+  ); // TODO: Address lag in Chrome
   flex-flow: row nowrap;
   height: math.div(2556px, 3); // iPhone 14 height
   margin: u(2);
@@ -46,10 +50,21 @@ const props = defineProps({
 
   &-superview {
     background: color-role("surface-light");
-    clip-path: inset(0% 0% 0% 0% round $screenBorderRadius);
+    border-radius: $screenBorderRadius;
     display: flex;
     flex-flow: column nowrap;
     flex: 1;
+    outline: $screenBezelWidth solid color-palette("black");
+
+    > :first-child {
+      border-top-left-radius: $screenBorderRadius;
+      border-top-right-radius: $screenBorderRadius;
+    }
+
+    > :last-child {
+      border-top-left-radius: $screenBorderRadius;
+      border-top-right-radius: $screenBorderRadius;
+    }
   }
 
   &-scrollArea {

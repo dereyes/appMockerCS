@@ -5,10 +5,20 @@
       backgroundImage: `url(${background})`,
     }"
   >
-    <ScreenDeadZone />
-    <div class="screen-specialHeader-hero-gradient-top"></div>
+    <div class="screen-specialHeader-hero-gradient-top">
+      <ScreenDeadZone />
+    </div>
     <div class="screen-specialHeader-hero-gradient-bottom">
-      <div class="screen-specialHeader-hero-gradient-bottom-button">
+      <PlanetCard theme="light">
+        <template v-slot:header-buttons>
+          <PlanetButtonIcon iconName="ellipsis" theme="light" />
+        </template>
+        <template v-slot:heading>
+          <h1 class="screen-specialHeader-hero-heading">{{ heading }}</h1>
+          <p class="screen-specialHeader-hero-subheading">{{ subheading }}</p>
+        </template>
+      </PlanetCard>
+      <!-- <div class="screen-specialHeader-hero-gradient-bottom-button">
         <PlanetButtonIcon :iconName="buttonIconName" theme="light" />
       </div>
       <h1 class="screen-specialHeader-hero-heading">
@@ -16,7 +26,7 @@
       </h1>
       <p class="screen-specialHeader-hero-subheading">
         {{ subheading }}
-      </p>
+      </p> -->
     </div>
   </div>
 </template>
@@ -32,7 +42,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 $gradient-color: color.adjust(color-role("surface-dark"), $alpha: -0.33);
-$gradient-top-height: u(6);
+$gradient-top-extraHeight: u(1);
 
 .screen-specialHeader-hero {
   background-position: center;
@@ -42,7 +52,9 @@ $gradient-top-height: u(6);
 
   &-gradient {
     &-top {
-      flex: $gradient-top-height 0 0;
+      display: flex;
+      padding: $gradient-top-extraHeight 0 0;
+      flex-flow: column nowrap;
       background: linear-gradient(transparent, $gradient-color);
     }
 
@@ -50,7 +62,6 @@ $gradient-top-height: u(6);
       background: $gradient-color;
       display: flex;
       flex-flow: column nowrap;
-      padding: 0 $card-padding $card-padding;
 
       &-button {
         display: flex;
@@ -63,6 +74,10 @@ $gradient-top-height: u(6);
   &-heading,
   &-subheading {
     color: color-role("text-light");
+  }
+
+  &-heading {
+    font-size: u(3.25);
   }
 }
 </style>
