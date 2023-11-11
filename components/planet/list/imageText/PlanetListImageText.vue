@@ -19,5 +19,6 @@ const props = defineProps({
 .list-imageText {
   display: flex;
   flex-flow: column nowrap;
+  gap: u(0.5);
 }
 </style>

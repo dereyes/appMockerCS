@@ -65,6 +65,10 @@ const props = defineProps({
     }
   }
 
+  &-header {
+    margin: 0 0 u(1);
+  }
+
   &-heading {
     display: flex;
     flex-flow: column nowrap;

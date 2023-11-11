@@ -1,4 +1,4 @@
-@use "map";
+@use "collection" as *;
 
 $remInPx: 16px;
 
@@ -23,7 +23,7 @@ $remInPx: 16px;
     "7": 7rem,
   );
 
-  @return map.checkAndGet($sizes, #{$size});
+  @return checkAndGet($sizes, #{$size});
 }
 
 @function ratio($ratio) {
@@ -45,5 +45,5 @@ $remInPx: 16px;
     "golden": 1.618
   );
 
-  @return map.checkAndGet($ratios, #{$ratio});
+  @return checkAndGet($ratios, #{$ratio});
 }

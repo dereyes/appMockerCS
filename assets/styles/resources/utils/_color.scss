@@ -1,4 +1,4 @@
-@use "map";
+@use "collection" as *;
 
 @function color-palette($key) {
   $palette: (
@@ -11,7 +11,7 @@
     "linen": #f0ebe6,
   );
 
-  @return map.checkAndGet($palette, #{$key});
+  @return checkAndGet($palette, #{$key});
 }
 
 @function color-role($key) {
@@ -24,5 +24,5 @@
     "text-light": color-palette("linen"),
   );
 
-  @return map.checkAndGet($role, #{$key});
+  @return checkAndGet($role, #{$key});
 }

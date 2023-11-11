@@ -78,7 +78,7 @@ $gradient-top-extraHeight: u(1);
   }
 
   &-heading {
-    font-size: u(3.25);
+    font-size: typescale("display");
   }
 }
 </style>
