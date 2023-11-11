@@ -54,7 +54,7 @@ $screenBezelWidth: u(0.75);
     display: flex;
     flex-flow: column nowrap;
     flex: 1;
-    outline: $screenBezelWidth solid color-palette("black");
+    outline: $screenBezelWidth solid color-palette("espresso");
 
     > :first-child {
       border-top-left-radius: $screenBorderRadius;

@@ -42,6 +42,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 $gradient-color: color.adjust(color-role("surface-dark"), $alpha: -0.33);
+$gradient-transparent: color.adjust(color-role("surface-dark"), $alpha: -1);
 $gradient-top-extraHeight: u(1);
 
 .screen-specialHeader-hero {
@@ -55,7 +56,7 @@ $gradient-top-extraHeight: u(1);
       display: flex;
       padding: $gradient-top-extraHeight 0 0;
       flex-flow: column nowrap;
-      background: linear-gradient(transparent, $gradient-color);
+      background: linear-gradient($gradient-transparent, $gradient-color);
     }
 
     &-bottom {

@@ -23,7 +23,7 @@ const props = defineProps({
   }
 
   &-lowlight {
-    opacity: 0.4;
+    color: color-palette("koucha");
   }
 }
 </style>

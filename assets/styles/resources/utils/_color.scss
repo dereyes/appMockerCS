@@ -2,8 +2,12 @@
 
 @function color-palette($key) {
   $palette: (
-    "black": #000000,
-    "white": #ffffff,
+    "espresso": #030302,
+    // 3:1 with linen, large text only
+    "koucha": #928272,
+    // 3:1 with koucha, large text only. 17:1 with espresso.
+    "hilite": #bfff0f,
+    // Decorative only, not used in accessible scenarios
     "linen": #f0ebe6,
   );
 
@@ -12,12 +16,12 @@
 
 @function color-role($key) {
   $role: (
-    "border-dark": color-palette("black"),
-    "border-light": color-palette("white"),
-    "surface-dark": color-palette("black"),
+    "border-dark": color-palette("espresso"),
+    "border-light": color-palette("linen"),
+    "surface-dark": color-palette("espresso"),
     "surface-light": color-palette("linen"),
-    "text-dark": color-palette("black"),
-    "text-light": color-palette("white"),
+    "text-dark": color-palette("espresso"),
+    "text-light": color-palette("linen"),
   );
 
   @return map.checkAndGet($role, #{$key});
