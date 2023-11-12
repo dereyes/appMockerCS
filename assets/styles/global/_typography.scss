@@ -10,5 +10,32 @@ h2 {
 
 p {
   font-size: typescale("p");
+  font-weight: fontWeight("light");
   margin: 0 0 u(0.75);
+
+  a {
+    $link-highlight-color: color-role("text-dark-accent");
+    $link-highlight-start: 50%;
+    $link-underline-color: color-role("text-dark");
+    $link-underline-start: 92%;
+
+    background: linear-gradient(
+      to bottom,
+      transparent $link-highlight-start,
+      $link-highlight-color $link-highlight-start,
+      $link-highlight-color $link-underline-start,
+      $link-underline-color $link-underline-start,
+      $link-underline-color 100%
+    );
+    font-weight: fontWeight("medium");
+
+    &::after {
+      content: " ↗";
+      font-size: typescale("xsmall");
+    }
+  }
+}
+
+strong {
+  font-weight: fontWeight("medium");
 }

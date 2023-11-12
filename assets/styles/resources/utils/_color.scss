@@ -9,6 +9,9 @@
     "hilite": #bfff0f,
     // Decorative only, not used in accessible scenarios
     "linen": #f0ebe6,
+    "ocha": #a8de87,
+    "yogurt": #e3815b,
+    "echinacea": #e3e371,
   );
 
   @return checkAndGet($palette, #{$key});
@@ -21,8 +24,19 @@
     "surface-dark": color-palette("espresso"),
     "surface-light": color-palette("linen"),
     "text-dark": color-palette("espresso"),
+    "text-dark-accent": color-palette("hilite"),
     "text-light": color-palette("linen"),
   );
 
   @return checkAndGet($role, #{$key});
+}
+
+@function color-semantic($key) {
+  $semantic: (
+    "surface-caution": color-palette("echinacea"),
+    "surface-confirmed": color-palette("ocha"),
+    "surface-warning": color-palette("yogurt"),
+  );
+
+  @return checkAndGet($semantic, #{$key});
 }

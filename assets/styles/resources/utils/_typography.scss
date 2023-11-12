@@ -44,3 +44,13 @@
 
   @return checkAndGet($typescale, #{$level});
 }
+
+@function fontWeight($weight) {
+    $fontWeights: (
+        "light": 300,
+        "normal": 400,
+        "medium": 500,
+    );
+
+    @return checkAndGet($fontWeights, #{$weight});
+}

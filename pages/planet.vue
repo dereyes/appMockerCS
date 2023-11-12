@@ -28,7 +28,15 @@
           tag="h2"
         />
       </template>
-      <PlanetListImageText :list="groupMontereyEventList" />
+      <PlanetListImageText>
+        <PlanetListImageTextItem v-for="event in groupMontereyEventList">
+          <p>
+            <a>{{ event.title }}</a>
+          </p>
+          <p>{{ event.description }}</p>
+          <PlanetChip :text="event.chip.text" :theme="event.chip.theme" />
+        </PlanetListImageTextItem>
+      </PlanetListImageText>
       <template v-slot:footer-buttons>
         <PlanetButtonIcon iconName="plus" />
         <PlanetButtonIcon iconName="rightArrow" />
@@ -116,8 +124,24 @@ const groupMonterey = groupStore.getGroupById(group);
 const groupMontereyEventList = eventStore
   .getEventsByGroupId(group, 3)
   .map((event) => {
+    const getChipTheme = (rsvpState) => {
+      switch (rsvpState) {
+        case "Attending":
+          return "confirmed";
+        case "Not attending":
+          return "warning";
+        case "Tentative":
+          return "caution";
+      }
+    };
+
+    const chipTheme = getChipTheme(event.rsvpState);
+
     return {
-      chip: event.rsvpState,
+      chip: {
+        text: event.rsvpState,
+        theme: chipTheme,
+      },
       description: `${event.date} • ${event.time}`,
       imageURL: "test",
       title: event.name,

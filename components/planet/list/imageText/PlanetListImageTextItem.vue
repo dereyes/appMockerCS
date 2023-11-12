@@ -2,10 +2,6 @@
   <li class="list-imageText-item">
     <div class="list-imageText-item-image"></div>
     <div class="list-imageText-item-content">
-      <p class="list-imageText-item-title">
-        <strong>{{ title }}</strong>
-      </p>
-      <p class="list-imageText-item-description">{{ description }}</p>
       <slot></slot>
     </div>
   </li>

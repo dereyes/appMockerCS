@@ -2,10 +2,12 @@
   <div class="list-imageText">
     <PlanetListImageTextItem
       v-for="item in list"
+      v-if="list"
       :description="item.description"
       :imageURL="item.imageURL"
       :title="item.title"
     />
+    <slot></slot>
   </div>
 </template>
 
@@ -19,6 +21,6 @@ const props = defineProps({
 .list-imageText {
   display: flex;
   flex-flow: column nowrap;
-  gap: u(0.5);
+  gap: u(0.75);
 }
 </style>
