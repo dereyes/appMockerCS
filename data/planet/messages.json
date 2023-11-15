@@ -1,0 +1,15 @@
+[
+  {
+    "groupId": "groupMonterey",
+    "messages": [
+      {
+        "text": "What should we do on Saturday?",
+        "userIdSender": "userEDriver"
+      },
+      {
+        "text": "Let's ride bikes!",
+        "userIdSender": "userADavidson"
+      }
+    ]
+  }
+]

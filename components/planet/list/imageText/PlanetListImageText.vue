@@ -1,5 +1,5 @@
 <template>
-  <div class="list-imageText">
+  <ul class="list-imageText">
     <PlanetListImageTextItem
       v-for="item in list"
       v-if="list"
@@ -8,7 +8,7 @@
       :title="item.title"
     />
     <slot></slot>
-  </div>
+  </ul>
 </template>
 
 <script setup>
@@ -19,6 +19,8 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .list-imageText {
+  @include unstyle-list;
+
   display: flex;
   flex-flow: column nowrap;
   gap: u(0.75);

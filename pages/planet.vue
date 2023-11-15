@@ -9,11 +9,12 @@
     <PlanetCard>
       <template v-slot:heading>
         <PlanetTypographyHeadingHighlight
-          highlight="5"
+          highlight="7"
           lowlight="New Messages"
           tag="h2"
         />
       </template>
+      <PlanetListMessages :messages="groupMontereyMessages" />
       <template v-slot:footer-buttons>
         <PlanetButtonIcon iconName="plus" />
         <PlanetButtonIcon iconName="rightArrow" />
@@ -111,12 +112,14 @@
 <script setup>
 import { useEventStore } from "~/stores/planet/eventStore";
 import { useGroupStore } from "~/stores/planet/groupStore";
+import { useMessageStore } from "~/stores/planet/messageStore";
 import { useTaskStore } from "~/stores/planet/taskStore";
 
 const group = "groupMonterey";
 
 const eventStore = useEventStore();
 const groupStore = useGroupStore();
+const messageStore = useMessageStore();
 const taskStore = useTaskStore();
 
 const groupMonterey = groupStore.getGroupById(group);
@@ -156,4 +159,6 @@ const groupMontereyTaskList = taskStore
       title: task?.title,
     };
   });
+
+const groupMontereyMessages = messageStore.getMessagesByGroupId(group, 3);
 </script>

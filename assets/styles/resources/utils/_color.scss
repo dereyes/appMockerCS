@@ -4,14 +4,15 @@
   $palette: (
     "espresso": #030302,
     // 3:1 with linen, large text only
-    "koucha": #928272,
+    "koucha": #989181,
     // 3:1 with koucha, large text only. 17:1 with espresso.
-    "hilite": #bfff0f,
+    "hilite": #d6f976,
     // Decorative only, not used in accessible scenarios
-    "linen": #f0ebe6,
-    "ocha": #a8de87,
-    "yogurt": #e3815b,
-    "echinacea": #e3e371,
+    "linen": #fbfaf8,
+    "ocha": #d6f976,
+    "yogurt": #ffb370,
+    "echinacea": #ffec70,
+    "moss": #045840,
   );
 
   @return checkAndGet($palette, #{$key});

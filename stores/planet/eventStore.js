@@ -10,19 +10,9 @@ export const useEventStore = defineStore("eventStore", {
   getters: {
     getEventsByGroupId: (state) => {
       return (groupId, maximum) => {
-        let result = [];
-
-        for (const event of state.events) {
-          if (event.groupId === groupId) {
-            result.push(event);
-          }
-
-          if (maximum && result.length >= maximum) {
-            break;
-          }
-        }
-
-        return result;
+        return state.events
+          .find((events) => events.groupId === groupId)
+          .events.slice(0, maximum);
       };
     },
   },

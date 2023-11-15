@@ -4,7 +4,7 @@
     "id": "groupMonterey",
     "name": "Monterey Trip 2023",
     "notificationCount": 5,
-    "userIdAdmin": "eDriver",
-    "userIdsMembers": ["eDriver", "aDavidson", "", "", "", "", ""]
+    "userIdAdmin": "userEDriver",
+    "userIdsMembers": ["userEDriver", "userADavidson", "", "", "", "", ""]
   }
 ]

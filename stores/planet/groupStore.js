@@ -1,7 +1,6 @@
 import { defineStore } from "pinia";
 import groups from "@/data/planet/groups.json";
 import { useUserStore } from "./userStore";
-// import { useEventStore } from "./eventStore";
 
 export const useGroupStore = defineStore("groupStore", {
   state: () => {
@@ -17,7 +16,7 @@ export const useGroupStore = defineStore("groupStore", {
           ${userStore.getUserById(group.userIdAdmin).nameLast}
       `;
 
-      //   group.eventCount = eventStore.getEventsByGroupId(group.id).length;
+      // group.eventCount = eventStore.getEventsByGroupId(group.id).length;
     }
 
     return {
